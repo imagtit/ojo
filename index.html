@@ -1,1 +1,16 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TV</title><style>html,body{margin:0;height:100%;background:#000;overflow:hidden}#liveVideo{width:100vw;height:100vh;object-fit:contain;background:#000}#muteBtn{position:fixed;top:10px;right:10px;z-index:1000;padding:10px 14px;border:none;border-radius:8px;background:#222;color:#fff;cursor:pointer;font-size:16px}</style></head><body><button id="muteBtn">🔇 Activar sonido</button><video id="liveVideo" autoplay muted playsinline controls></video><script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script><script>const video=document.getElementById("liveVideo"),btn=document.getElementById("muteBtn"),url="https://rtv.fullhd-streaming.com:19360/dreikotv/dreikotv.m3u8";if(Hls.isSupported()){const hls=new Hls();hls.loadSource(url);hls.attachMedia(video);}else if(video.canPlayType("application/vnd.apple.mpegurl")){video.src=url;}btn.onclick=()=>{video.muted=!video.muted;btn.textContent=video.muted?"🔇 Activar sonido":"🔊 Silenciar";video.play();};</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>TV</title>
+	<style>html,body{margin:0;height:100%;background:#000;overflow:hidden}#liveVideo{width:100vw;height:100vh;object-fit:contain;background:#000}#muteBtn{position:fixed;top:100px;right:10px;z-index:1000;padding:10px 14px;border:none;border-radius:8px;background:#222;color:#fff;cursor:pointer;font-size:16px}</style></head>
+
+	<body>
+		<button id="muteBtn">🔇 Activar sonido</button>
+		<video id="liveVideo" autoplay muted playsinline controls></video>
+		<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+		<script>const video=document.getElementById("liveVideo"),btn=document.getElementById("muteBtn"),url="https://rtv.fullhd-streaming.com:19360/dreikotv/dreikotv.m3u8";if(Hls.isSupported()){const hls=new Hls();hls.loadSource(url);hls.attachMedia(video);}else if(video.canPlayType("application/vnd.apple.mpegurl")){video.src=url;}btn.onclick=()=>{video.muted=!video.muted;btn.textContent=video.muted?"🔇 Activar sonido":"🔊 Silenciar";video.play();};</script>
+	</body>
+
+		
+		</html>
