@@ -231,23 +231,17 @@ if (Hls.isSupported()) {
 
 video.volume=1;
 
-soundBtn.onclick=function(){
+soundBtn.addEventListener("pointerdown", function(e){
 
-    video.muted=!video.muted;
+    e.preventDefault();
 
-    if(video.muted){
+    video.muted = !video.muted;
 
-        soundBtn.innerHTML="🔇";
+    soundBtn.innerHTML = video.muted ? "🔇" : "🔊";
 
-    }else{
+    video.play().catch(()=>{});
 
-        soundBtn.innerHTML="🔊";
-
-    }
-
-    video.play();
-
-};
+});
 
 playBtn.onclick=function(){
 
